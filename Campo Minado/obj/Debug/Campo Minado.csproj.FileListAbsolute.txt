@@ -1,0 +1,20 @@
+C:\Users\luiz.esferreira6\source\Testes por conta própria\Campo Minado\bin\Debug\Campo Minado.exe.config
+C:\Users\luiz.esferreira6\source\Testes por conta própria\Campo Minado\bin\Debug\Campo Minado.exe
+C:\Users\luiz.esferreira6\source\Testes por conta própria\Campo Minado\bin\Debug\Campo Minado.pdb
+C:\Users\luiz.esferreira6\source\Testes por conta própria\Campo Minado\obj\Debug\Campo Minado.csproj.AssemblyReference.cache
+C:\Users\luiz.esferreira6\source\Testes por conta própria\Campo Minado\obj\Debug\Campo_Minado.Properties.Resources.resources
+C:\Users\luiz.esferreira6\source\Testes por conta própria\Campo Minado\obj\Debug\Campo Minado.csproj.GenerateResource.cache
+C:\Users\luiz.esferreira6\source\Testes por conta própria\Campo Minado\obj\Debug\Campo Minado.csproj.CoreCompileInputs.cache
+C:\Users\luiz.esferreira6\source\Testes por conta própria\Campo Minado\obj\Debug\Campo Minado.exe
+C:\Users\luiz.esferreira6\source\Testes por conta própria\Campo Minado\obj\Debug\Campo Minado.pdb
+C:\Users\luiz.esferreira6\source\Testes por conta própria\Campo Minado\obj\Debug\Campo_Minado.Jogo.resources
+C:\Users\luiz.esferreira6\source\Testes por conta própria\CampoMinado\Campo Minado\bin\Debug\Campo Minado.exe.config
+C:\Users\luiz.esferreira6\source\Testes por conta própria\CampoMinado\Campo Minado\bin\Debug\Campo Minado.exe
+C:\Users\luiz.esferreira6\source\Testes por conta própria\CampoMinado\Campo Minado\bin\Debug\Campo Minado.pdb
+C:\Users\luiz.esferreira6\source\Testes por conta própria\CampoMinado\Campo Minado\obj\Debug\Campo Minado.csproj.AssemblyReference.cache
+C:\Users\luiz.esferreira6\source\Testes por conta própria\CampoMinado\Campo Minado\obj\Debug\Campo_Minado.Jogo.resources
+C:\Users\luiz.esferreira6\source\Testes por conta própria\CampoMinado\Campo Minado\obj\Debug\Campo_Minado.Properties.Resources.resources
+C:\Users\luiz.esferreira6\source\Testes por conta própria\CampoMinado\Campo Minado\obj\Debug\Campo Minado.csproj.GenerateResource.cache
+C:\Users\luiz.esferreira6\source\Testes por conta própria\CampoMinado\Campo Minado\obj\Debug\Campo Minado.csproj.CoreCompileInputs.cache
+C:\Users\luiz.esferreira6\source\Testes por conta própria\CampoMinado\Campo Minado\obj\Debug\Campo Minado.exe
+C:\Users\luiz.esferreira6\source\Testes por conta própria\CampoMinado\Campo Minado\obj\Debug\Campo Minado.pdb
