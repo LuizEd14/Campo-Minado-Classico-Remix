@@ -22,15 +22,14 @@ namespace Campo_Minado
         private int linhas = 10, colunas = 10, minas = 10, tamanho = 35;
         private Button[,] botoes;
         private bool[,] temMina, revelado;
-        private bool primeiraJogada = true, jogoAtivo, perdeuVida, Marcou, Ganhou = false;
-        private int JogosGanhados = 0, vidasExtras = 1, vidasColetadas = 0;
+        public bool primeiraJogada = true, jogoAtivo, perdeuVida, Marcou, Ganhou = false;
+        public int JogosGanhados = 0, vidasExtras = 1, vidasColetadas = 0;
 
         public Jogo()
         {
             InitializeComponent();
-            CarregarConquistas();
             IniciarJogo();
-            AtualizarLousaDeConquistas();
+            /* AtualizarLousaDeConquistas(); */
         }
         private async void Aguarde(int segundos)
         {
@@ -54,6 +53,10 @@ namespace Campo_Minado
 
         private void btnRosto_Click(object sender, EventArgs e)
         {
+            if (jogoAtivo)
+            {
+                LimparRecursos();
+            }
             ReiniciarJogo();
         }
 
@@ -299,10 +302,10 @@ namespace Campo_Minado
                 RevelarTudo();
 
                 // Verifica as conquistas
-                VerificarConquistas();
-                AtualizarLousaDeConquistas();
+                LimparRecursos();
 
                 MessageBox.Show("Parabéns! Você venceu!");
+                GerenciadorConquistas.VerificarConquistas(perdeuVida, Marcou, vidasExtras, vidasColetadas, JogosGanhados, cronometro.Elapsed);
             }
         }
 
@@ -344,6 +347,12 @@ namespace Campo_Minado
             {
                 botoes[i, j].Text = botoes[i, j].Text == "" ? "🏴" : "";
             }
+        }
+
+        private void btnConquistas_Click(object sender, EventArgs e)
+        {
+            frmConquistas Conquistas = new frmConquistas();
+            Conquistas.Show();
         }
 
         private void AtualizarLabelVidas()
@@ -398,183 +407,17 @@ namespace Campo_Minado
         enum Dificuldade { Facil, Medio, Dificil }
         enum Conquista { PrimeiraVitoria, VencerSemPerderVidas, Recolher100Vidas, VencerEmTempoRecorde, CacadorDeCoracoes, Sobrevivente, SemBandeiras }
 
-
-        private void VerificarConquistas()
-        {
-            cronometro.Stop(); // para o cronômetro
-
-            TimeSpan tempoTotal = cronometro.Elapsed;
-            TimeSpan tempoLimite = TimeSpan.FromSeconds(180); // exemplo: 3 minuto para "Tempo Recorde"
-
-            // Primeira vitória
-            if (!conquistasDesbloqueadas.Contains(Conquista.PrimeiraVitoria))
-            {
-                conquistasDesbloqueadas.Add(Conquista.PrimeiraVitoria);
-                somVitoria.Play();
-                MessageBox.Show("Conquista desbloqueada: Primeira Vitória! 🎉");
-                SalvarConquistas();
-            }
-
-            // Vencer 10 vezes
-            if (JogosGanhados == 10 && !conquistasDesbloqueadas.Contains(Conquista.Sobrevivente))
-            {
-                conquistasDesbloqueadas.Add(Conquista.Sobrevivente);
-                somVitoria.Play();
-                MessageBox.Show("Conquista desbloqueada: Sobrevivente! 🛡");
-                SalvarConquistas();
-            }
-
-            // Mais de 100 vidas
-            if ( vidasExtras >= 100 && !conquistasDesbloqueadas.Contains(Conquista.Recolher100Vidas))
-            {
-                conquistasDesbloqueadas.Add(Conquista.Recolher100Vidas);
-                somVitoria.Play();
-                MessageBox.Show("Conquista desbloqueada: Muitos Corações! 🎉");
-                SalvarConquistas();
-            }
-
-            // Tempo Recorde de 3 minutos
-            if (tempoTotal <= tempoLimite && !conquistasDesbloqueadas.Contains(Conquista.VencerEmTempoRecorde))
-            {
-                conquistasDesbloqueadas.Add(Conquista.VencerEmTempoRecorde);
-                somVitoria.Play();
-                MessageBox.Show("Conquista desbloqueada: Tempo Recorde! ⏱");
-                SalvarConquistas();
-            }
-
-            // Sem Bandeiras
-            if (!Marcou && !conquistasDesbloqueadas.Contains(Conquista.SemBandeiras))
-            {
-                conquistasDesbloqueadas.Add(Conquista.SemBandeiras);
-                somVitoria.Play();
-                MessageBox.Show("Conquista desbloqueada: Sem Bandeiras! 🏴");
-                SalvarConquistas();
-            }
-
-            // Vencer sem perder vidas
-            if (!perdeuVida && !conquistasDesbloqueadas.Contains(Conquista.VencerSemPerderVidas))
-            {
-                conquistasDesbloqueadas.Add(Conquista.VencerSemPerderVidas);
-                somVitoria.Play();
-                MessageBox.Show("Conquista desbloqueada: Sem Perder Vidas! ❤️🛡");
-                SalvarConquistas();
-            }
-
-            // Recolher todas as vidas extras
-            if (vidasColetadas >= vidasExtras && !conquistasDesbloqueadas.Contains(Conquista.CacadorDeCoracoes))
-            {
-                conquistasDesbloqueadas.Add(Conquista.CacadorDeCoracoes);
-                somVitoria.Play();
-                MessageBox.Show("Conquista desbloqueada: Caçador de Vidas! ❤️");
-                SalvarConquistas();
-            }
-        }
-
         private void LimparRecursos()
         {
             // Dispose de objetos que implementam IDisposable
             somVitoria.Dispose();
             somKaboom.Dispose();
 
-            // Limpa os controles do painel de conquistas
-            pnlConquistas.Controls.Clear();
+            /*Limpa os controles do painel de conquistas
+            pnlConquistas.Controls.Clear();*/
 
             // Força a coleta de lixo
             GC.Collect();
-        }
-
-        private void SalvarConquistas()
-        {
-            using (StreamWriter writer = new StreamWriter("conquistas.txt"))
-            {
-                foreach (var conquista in conquistasDesbloqueadas)
-                {
-                    writer.WriteLine(conquista.ToString());
-                }
-            }
-        }
-
-        private void CarregarConquistas()
-        {
-            if (File.Exists("conquistas.txt"))
-            {
-                using (StreamReader reader = new StreamReader("conquistas.txt"))
-                {
-                    string line;
-                    while ((line = reader.ReadLine()) != null)
-                    {
-                        if (Enum.TryParse(line, out Conquista conquista))
-                        {
-                            conquistasDesbloqueadas.Add(conquista);
-                        }
-                    }
-                }
-            }
-        }
-
-        private void AtualizarLousaDeConquistas()
-        {
-            pnlConquistas.Controls.Clear();
-            pnlConquistas.AutoScroll = true;
-            pnlConquistas.HorizontalScroll.Enabled = true;
-            pnlConquistas.VerticalScroll.Visible = false;
-
-            int tamanho = 65;
-            int margem = 5;
-            int x = 10;
-
-            ToolTip tooltip = new ToolTip();
-
-            foreach (Conquista conquista in Enum.GetValues(typeof(Conquista)))
-            {
-                if (conquistasDesbloqueadas.Contains(conquista))
-                {
-                    PictureBox pic = new PictureBox();
-                    pic.Size = new Size(tamanho, tamanho);
-                    pic.SizeMode = PictureBoxSizeMode.StretchImage;
-                    pic.Location = new Point(x, 10);
-                    pic.BackColor = Color.Transparent;
-
-                    switch (conquista)
-                    {
-                        case Conquista.Recolher100Vidas:
-                            pic.Image = Properties.Resources.Conquista_Coracao;
-                            tooltip.SetToolTip(pic, "Pegue mais de 100 corações.");
-                            break;
-                        case Conquista.Sobrevivente:
-                            pic.Image = Properties.Resources.Conquista_Capacete;
-                            tooltip.SetToolTip(pic, "Vença 10 vezes sem perder.");
-                            break;
-                        case Conquista.SemBandeiras:
-                            pic.Image = Properties.Resources.Conquista_Sem_Bandeiras;
-
-                            tooltip.SetToolTip(pic, "Não utilize bandeiras em uma rodada");
-                            break;
-                        case Conquista.PrimeiraVitoria:
-                            pic.Image = Properties.Resources.Conquista_Primeira_Vitoria;
-                            tooltip.SetToolTip(pic, "Ganhe pela primeira vez");
-                            break;
-                        case Conquista.VencerSemPerderVidas:
-                            pic.Image = Properties.Resources.Conquista_Sem_Vidas_Perdas;
-                            tooltip.SetToolTip(pic, "Não erre seu passo!");
-                            break;
-                        case Conquista.CacadorDeCoracoes:
-                            pic.Image = Properties.Resources.Conquista_Todas_Vidas;
-                            tooltip.SetToolTip(pic, "Recolha todos os corações do mapa.");
-                            break;
-                        case Conquista.VencerEmTempoRecorde:
-                            pic.Image = Properties.Resources.Conquista_Tempo_Recorde;
-                            tooltip.SetToolTip(pic, "Vença em menos de 3 minutos.");
-                            break;
-                        default:
-                            pic.Image = Properties.Resources.locked;
-                            break;
-                    }
-
-                    pnlConquistas.Controls.Add(pic);
-                    x += tamanho + margem;
-                }
-            }
         }
     }
 }

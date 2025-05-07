@@ -18,3 +18,4 @@ C:\Users\luiz.esferreira6\source\Testes por conta própria\CampoMinado\Campo Min
 C:\Users\luiz.esferreira6\source\Testes por conta própria\CampoMinado\Campo Minado\obj\Debug\Campo Minado.csproj.CoreCompileInputs.cache
 C:\Users\luiz.esferreira6\source\Testes por conta própria\CampoMinado\Campo Minado\obj\Debug\Campo Minado.exe
 C:\Users\luiz.esferreira6\source\Testes por conta própria\CampoMinado\Campo Minado\obj\Debug\Campo Minado.pdb
+C:\Users\luiz.esferreira6\source\Testes por conta própria\CampoMinado\Campo Minado\obj\Debug\Campo_Minado.frmConquistas.resources

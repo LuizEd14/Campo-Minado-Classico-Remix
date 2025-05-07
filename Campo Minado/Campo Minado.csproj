@@ -61,6 +61,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conquista.cs" />
+    <Compile Include="Conquistas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Conquistas.Designer.cs">
+      <DependentUpon>Conquistas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GerenciadorConquistas.cs" />
     <Compile Include="Jogo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +77,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Conquistas.resx">
+      <DependentUpon>Conquistas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Jogo.resx">
       <DependentUpon>Jogo.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,9 +137,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Chalkboard.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\locked.png" />
   </ItemGroup>
   <ItemGroup>
@@ -138,13 +146,19 @@
     <None Include="Resources\Vitória_1.wav" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Conquista_Coracao.png" />
+    <None Include="Resources\Conquistas.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Conquista_Capacete.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Conquista_Coracao.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\Conquista_Primeira_Vitoria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Conquista_Sem_Bandeiras.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Conquista_Sem_Vidas_Perdas.png" />
@@ -154,9 +168,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Conquista_Todas_Vidas.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Conquista_Sem_Bandeiras.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

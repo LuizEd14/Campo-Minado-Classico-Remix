@@ -34,23 +34,23 @@ namespace Campo_Minado
             this.components = new System.ComponentModel.Container();
             this.pnlTelinha = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.lblVida = new System.Windows.Forms.Label();
-            this.pbCoracao = new System.Windows.Forms.PictureBox();
-            this.btnRosto = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.facilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dificilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlConquistas = new System.Windows.Forms.Panel();
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.pnlTabuleiro = new System.Windows.Forms.Panel();
+            this.btnConquistas = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnRosto = new System.Windows.Forms.Button();
             this.pnlTelinha.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoracao)).BeginInit();
+            this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.pnlTabuleiro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTelinha
@@ -66,14 +66,12 @@ namespace Campo_Minado
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Controls.Add(this.panel3, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnRosto, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.pnlConquistas, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -82,51 +80,26 @@ namespace Campo_Minado
             this.tableLayoutPanel2.Size = new System.Drawing.Size(712, 100);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // panel3
+            // panel1
             // 
-            this.panel3.Controls.Add(this.lblVida);
-            this.panel3.Controls.Add(this.pbCoracao);
-            this.panel3.Location = new System.Drawing.Point(103, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(100, 94);
-            this.panel3.TabIndex = 2;
+            this.panel1.Controls.Add(this.btnConquistas);
+            this.panel1.Controls.Add(this.lblVida);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(103, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(606, 94);
+            this.panel1.TabIndex = 3;
             // 
             // lblVida
             // 
             this.lblVida.AutoSize = true;
             this.lblVida.Font = new System.Drawing.Font("Comic Sans MS", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVida.Location = new System.Drawing.Point(45, 27);
+            this.lblVida.Location = new System.Drawing.Point(55, 28);
             this.lblVida.Name = "lblVida";
             this.lblVida.Size = new System.Drawing.Size(35, 40);
             this.lblVida.TabIndex = 0;
             this.lblVida.Text = "1";
-            // 
-            // pbCoracao
-            // 
-            this.pbCoracao.Image = global::Campo_Minado.Properties.Resources.Coração;
-            this.pbCoracao.Location = new System.Drawing.Point(12, 30);
-            this.pbCoracao.Name = "pbCoracao";
-            this.pbCoracao.Size = new System.Drawing.Size(37, 37);
-            this.pbCoracao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCoracao.TabIndex = 0;
-            this.pbCoracao.TabStop = false;
-            // 
-            // btnRosto
-            // 
-            this.btnRosto.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.btnRosto.ContextMenuStrip = this.contextMenuStrip1;
-            this.btnRosto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRosto.FlatAppearance.BorderSize = 0;
-            this.btnRosto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRosto.Image = global::Campo_Minado.Properties.Resources.neutral;
-            this.btnRosto.Location = new System.Drawing.Point(3, 3);
-            this.btnRosto.Name = "btnRosto";
-            this.btnRosto.Size = new System.Drawing.Size(94, 94);
-            this.btnRosto.TabIndex = 0;
-            this.btnRosto.UseVisualStyleBackColor = false;
-            this.btnRosto.Click += new System.EventHandler(this.btnRosto_Click);
-            this.btnRosto.MouseEnter += new System.EventHandler(this.btnRosto_MouseEnter);
-            this.btnRosto.MouseLeave += new System.EventHandler(this.btnRosto_MouseLeave);
             // 
             // contextMenuStrip1
             // 
@@ -162,16 +135,6 @@ namespace Campo_Minado
             this.dificilToolStripMenuItem.Text = "Difícil";
             this.dificilToolStripMenuItem.Click += new System.EventHandler(this.dificilToolStripMenuItem_Click);
             // 
-            // pnlConquistas
-            // 
-            this.pnlConquistas.AutoScroll = true;
-            this.pnlConquistas.BackColor = System.Drawing.Color.OldLace;
-            this.pnlConquistas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlConquistas.Location = new System.Drawing.Point(209, 3);
-            this.pnlConquistas.Name = "pnlConquistas";
-            this.pnlConquistas.Size = new System.Drawing.Size(500, 94);
-            this.pnlConquistas.TabIndex = 3;
-            // 
             // pnlContainer
             // 
             this.pnlContainer.BackColor = System.Drawing.Color.Gray;
@@ -193,6 +156,46 @@ namespace Campo_Minado
             this.pnlTabuleiro.Size = new System.Drawing.Size(692, 444);
             this.pnlTabuleiro.TabIndex = 3;
             // 
+            // btnConquistas
+            // 
+            this.btnConquistas.BackgroundImage = global::Campo_Minado.Properties.Resources.Conquistas;
+            this.btnConquistas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConquistas.FlatAppearance.BorderSize = 0;
+            this.btnConquistas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConquistas.Location = new System.Drawing.Point(531, 18);
+            this.btnConquistas.Name = "btnConquistas";
+            this.btnConquistas.Size = new System.Drawing.Size(59, 59);
+            this.btnConquistas.TabIndex = 1;
+            this.btnConquistas.UseVisualStyleBackColor = true;
+            this.btnConquistas.Click += new System.EventHandler(this.btnConquistas_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Campo_Minado.Properties.Resources.Coração;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 30);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(37, 37);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnRosto
+            // 
+            this.btnRosto.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnRosto.ContextMenuStrip = this.contextMenuStrip1;
+            this.btnRosto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRosto.FlatAppearance.BorderSize = 0;
+            this.btnRosto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRosto.Image = global::Campo_Minado.Properties.Resources.neutral;
+            this.btnRosto.Location = new System.Drawing.Point(3, 3);
+            this.btnRosto.Name = "btnRosto";
+            this.btnRosto.Size = new System.Drawing.Size(94, 94);
+            this.btnRosto.TabIndex = 0;
+            this.btnRosto.UseVisualStyleBackColor = false;
+            this.btnRosto.Click += new System.EventHandler(this.btnRosto_Click);
+            this.btnRosto.MouseEnter += new System.EventHandler(this.btnRosto_MouseEnter);
+            this.btnRosto.MouseLeave += new System.EventHandler(this.btnRosto_MouseLeave);
+            // 
             // Jogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,11 +211,11 @@ namespace Campo_Minado
             this.Text = "Campo Minado Clássico Remix";
             this.pnlTelinha.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCoracao)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
             this.pnlTabuleiro.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -227,11 +230,11 @@ namespace Campo_Minado
         private System.Windows.Forms.ToolStripMenuItem medioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dificilToolStripMenuItem;
         private TableLayoutPanel tableLayoutPanel2;
-        private Panel panel3;
-        private Label lblVida;
-        private PictureBox pbCoracao;
-        private Panel pnlConquistas;
         private Panel pnlTabuleiro;
+        private Panel panel1;
+        private Label lblVida;
+        private PictureBox pictureBox1;
+        private Button btnConquistas;
     }
 }
 

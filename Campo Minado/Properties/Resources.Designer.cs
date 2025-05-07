@@ -63,16 +63,6 @@ namespace Campo_Minado.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Chalkboard {
-            get {
-                object obj = ResourceManager.GetObject("Chalkboard", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Conquista_Capacete {
             get {
                 object obj = ResourceManager.GetObject("Conquista_Capacete", resourceCulture);
@@ -136,6 +126,16 @@ namespace Campo_Minado.Properties {
         internal static System.Drawing.Bitmap Conquista_Todas_Vidas {
             get {
                 object obj = ResourceManager.GetObject("Conquista_Todas_Vidas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Conquistas {
+            get {
+                object obj = ResourceManager.GetObject("Conquistas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
