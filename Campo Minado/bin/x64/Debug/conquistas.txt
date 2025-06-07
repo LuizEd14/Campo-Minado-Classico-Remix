@@ -1,0 +1,7 @@
+PrimeiraVitoria
+VencerEmTempoRecorde
+SemBandeiras
+VencerSemPerderVidas
+Sobrevivente
+Recolher100Vidas
+CacadorDeCoracoes

@@ -1,0 +1,4 @@
+PrimeiraVitoria
+VencerEmTempoRecorde
+SemBandeiras
+VencerSemPerderVidas

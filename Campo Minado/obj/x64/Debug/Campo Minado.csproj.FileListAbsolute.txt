@@ -1,0 +1,11 @@
+D:\Campo-Minado-Classico-Remix-main\Campo Minado\bin\x64\Debug\Campo Minado.exe.config
+D:\Campo-Minado-Classico-Remix-main\Campo Minado\bin\x64\Debug\Campo Minado.exe
+D:\Campo-Minado-Classico-Remix-main\Campo Minado\bin\x64\Debug\Campo Minado.pdb
+D:\Campo-Minado-Classico-Remix-main\Campo Minado\obj\x64\Debug\Campo Minado.csprojAssemblyReference.cache
+D:\Campo-Minado-Classico-Remix-main\Campo Minado\obj\x64\Debug\Campo_Minado.frmConquistas.resources
+D:\Campo-Minado-Classico-Remix-main\Campo Minado\obj\x64\Debug\Campo_Minado.Jogo.resources
+D:\Campo-Minado-Classico-Remix-main\Campo Minado\obj\x64\Debug\Campo_Minado.Properties.Resources.resources
+D:\Campo-Minado-Classico-Remix-main\Campo Minado\obj\x64\Debug\Campo Minado.csproj.GenerateResource.cache
+D:\Campo-Minado-Classico-Remix-main\Campo Minado\obj\x64\Debug\Campo Minado.csproj.CoreCompileInputs.cache
+D:\Campo-Minado-Classico-Remix-main\Campo Minado\obj\x64\Debug\Campo Minado.exe
+D:\Campo-Minado-Classico-Remix-main\Campo Minado\obj\x64\Debug\Campo Minado.pdb
